@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
@@ -19,7 +20,7 @@ var autoIncrement = require('mongoose-auto-increment');
 
 app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
-mongoose.connect("mongodb://usernamehere:passwordhere@ds047865.mlab.com:47865/auto2fa");
+mongoose.connect("mongodb://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@" + process.env.DB_HOST + "/auto2fa");
 var db = mongoose.connection;
 
 db.on('error', function(err) {
