@@ -25,6 +25,7 @@
     "mongoose-auto-increment": "^5.0.1",
     "morgan": "^1.9.0",
     "ng2-semantic-ui": "^0.9.6",
+    "node-2fa": "^1.1.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "semantic-ui": "^2.2.14",
