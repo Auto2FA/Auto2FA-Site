@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Auto2FA - 2FA but e-mails instead of passwords">
+		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+		<title>Auto2FA - Home</title>
+		<style type="text/css">
+	    .masthead.segment {
+	      min-height: 700px;
+	      padding: 1em 0em;
+	    }
+	    .masthead .logo.item img {
+	      margin-right: 1em;
+	    }
+	    .masthead .ui.menu .ui.button {
+	      margin-left: 0.5em;
+	    }
+	    .masthead h1.ui.header {
+	      margin-top: 3em;
+	      margin-bottom: 0em;
+	      font-size: 4em;
+	      font-weight: normal;
+	    }
+	    .masthead h2 {
+	      font-size: 1.7em;
+	      font-weight: normal;
+	    }
+		</style>
+	</head>
+
+	<body>
+		<div class="ui inverted fixed vertial masthead center aligned segment">
+			    <div class="ui massive inverted borderless static menu">
+			      <div class="ui container">
+			        <a class="header item" href="/">Auto2FA</a>
+							<a class="item" href="/about">About</a>
+							<% if(user) { %>
+								<a class="item" href="/ld">User link 1</a>
+								<a class="item" href="/pf">User link 2</a>
+								<a class="item" href="/cx"></a>
+							<% } %>
+							<div class="right menu">
+								<% if(user) { %>
+								<a class="item" href="/dashboard">Profile</a>
+								<a class="item" href="/logout">Logout</a>
+								<% } else { %>
+								<a class="item" href="/login">Login</a>
+								<% } %>
+							</div>
+			      </div>
+			    </div>
+			<div class="ui text container">
+				<h1 class="ui inverted header">
+					Auto2FA
+					<div class="ui inverted sub header">Beta</div>
+				</h1>
+				<br />
+				<div class="ui inverted">
+                                    2FA but emails instead of passwords. Mobile auth too, but you don't have to do as much.
+				</div>
+				<br />
+				<div class="ui huge primary button">
+					Learn more
+					<i class="right arrow icon"></i>
+				</div>
+			</div>
+		</div>
+		<br />
+	<div class="ui center aligned stackable grid container">
+		<div class="three column row">
+		  <div class="column">
+		    <i class="ui centered massive database icon"></i>
+		    <h1 class="ui header">
+                        Passwordless 2FA
+		    </h1>
+		    <p>
+                    2FA but e-mails instead of passwords :)
+				</p>
+		  </div>
+		  <div class="column">
+		    <i class="ui centered massive desktop icon"></i>
+		    <h1 class="ui header">
+                        Automation
+		    </h1>
+		    <p>
+                    Our model automates the existing 2FA moble authentication framework
+		    </p>
+		  </div>
+		  <div class="column">
+		    <i class="ui centered massive bug icon"></i>
+		    <h1 class="ui header">
+                        Open Source
+		    </h1>
+		    <p>
+                    Crafted up at TAMUHack by UTSA computer science students. All of our source code is available on github.
+                    </p>
+		  </div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<div class="ui section divider"></div>
+				<footer>michealrmyers@gmail.com | &copy; 2019 Auto2FA </footer>
+			</div>
+		</div>
+	</div>
+
+	</body>
+
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+	<script src="semantic/dist/semantic.min.js"></script>
+
+</html>

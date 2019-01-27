@@ -1,0 +1,15 @@
+{
+  "name": "debaterank",
+  "description": "",
+  "authors": [
+    "Aspecting <mrmyers2k@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
