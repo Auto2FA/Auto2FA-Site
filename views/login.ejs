@@ -13,40 +13,42 @@
         <a class="item" href="/about">About</a>
       </div>
     </div>
-    </div>
     <div class="ui center aligned grid">
       <div class="ui container formcontainer">
+        <center>
+            <h1 class="ui huge header">
+                Sign in
+            </h1>
+        </center>
         <!-- show any messages that come back with authentication -->
-        <% if (message.length > 0) { %>
+        <% if (smessage && smessage.length > 0) { %>
+            <div class="ui success message">
+              <div class="header">
+                Login successful
+              </div>
+              <p><%= smessage %></p>
+            </div>
+
+            <%} else if(emessage && emessage.length > 0) {%>
             <div class="ui error message">
               <div class="header">
                 Login failed
               </div>
-              <p><%= message %></p>
+              <p><%= emessage %></p>
             </div>
         <% } %>
-        <h1 class="ui huge header">
-          Please sign in
-        </h1>
+        <br />
         <form action="/login" method="POST" class="ui large form">
           <div class="field">
             <div class="ui left icon input">
               <i class="user icon"></i><input name="email" placeholder="E-mail address" type="text" />
             </div>
           </div>
-          <div class="field">
-            <div class="ui left icon input">
-              <i class="lock icon"></i><input name="password" placeholder="Password" type="password" />
-            </div>
-          </div>
-          <div class="ui buttons fluid">
+          <center>
             <button class="ui large primary submit button">
-              Login
+            Login / signup
             </button>
-            <a href="/signup" class="ui large button">
-              Signup
-            </a>
-          </div>
+          </center>
         </form>
       </div>
     </div>
@@ -85,19 +87,6 @@
                     }
                   ]
                 },
-                password: {
-                  identifier  : 'password',
-                  rules: [
-                    {
-                      type   : 'empty',
-                      prompt : 'Please enter your password'
-                    },
-                    {
-                      type   : 'length[6]',
-                      prompt : 'Your password must be at least 6 characters'
-                    }
-                  ]
-                }
               },
               inline: true,
               on: 'blur'
