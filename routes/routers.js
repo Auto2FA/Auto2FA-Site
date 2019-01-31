@@ -55,13 +55,12 @@ module.exports = function(app, passport, bruteforce) {
                     secretQr = secretObj.qr;
                     user.secret = secretObj.secret;
                     User.update({_id : user.id}, { $set: { secret: user.secret}}, function callback(err, num) {});
-                    res.render('authpg/qr.ejs', {data : secretQr});
-
-                            req.login(user, function(err) {
-                                if(err)
-                                    res.status(405).send(err);
-                                res.redirect('/');
-                            });
+                    req.login(user, function(err) {
+                        if(err)
+                            res.status(405).send(err);
+                        else
+                        res.render('authpg/qr.ejs', {data : secretQr});
+                    });
                 } else {
                     var net = require('net');
                     var client = new net.Socket();
